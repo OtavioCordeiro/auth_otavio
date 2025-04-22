@@ -16,7 +16,6 @@ namespace BattleFace.API.Controllers
             _authService = authService;
         }
 
-        // POST api/auth/register
         [HttpPost("register")]
         public async Task<IActionResult> Register([FromBody] RegisterRequestDto registerRequestDto)
         {
@@ -36,7 +35,6 @@ namespace BattleFace.API.Controllers
             }
         }
 
-        // POST api/auth/login
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody] LoginRequestDto loginRequestDto)
         {
@@ -75,7 +73,6 @@ namespace BattleFace.API.Controllers
             }
         }
 
-        // POST api/auth/forgot-password
         [HttpPost("forgot-password")]
         public async Task<IActionResult> ForgotPassword([FromBody] ForgotPasswordRequestDto request)
         {
@@ -89,7 +86,6 @@ namespace BattleFace.API.Controllers
             return Ok(new { message = "Se o e-mail estiver cadastrado, um link de redefinição será enviado." });
         }
 
-        // POST api/auth/reset-password
         [HttpPost("reset-password")]
         public async Task<IActionResult> ResetPassword([FromBody] ResetPasswordRequestDto request)
         {
